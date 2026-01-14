@@ -11,7 +11,6 @@ import Contact from './pages/Contact';
 import Voting from './pages/Voting';
 import Assemblies from './pages/Assemblies';
 import Dashboard from './pages/Dashboard';
-import Documents from './pages/Documents';
 import AdminAssociados from './pages/AdminAssociados';
 import './i18n';
 
