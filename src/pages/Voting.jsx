@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ThumbsUp, ThumbsDown, Minus, Clock, CheckCircle2, AlertCircle, Users } from 'lucide-react';
+import { ThumbsUp, ThumbsDown, Minus, Clock, CheckCircle2, AlertCircle, Users, ShieldCheck } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 const Voting = () => {
     const { t } = useTranslation();
+    const { user } = useAuth();
     const [votedItems, setVotedItems] = useState({});
 
     const votingItems = [
@@ -52,9 +54,20 @@ const Voting = () => {
     return (
         <div className="min-h-screen bg-gray-50 pt-32 pb-20">
             <div className="container mx-auto px-6 max-w-5xl">
-                <header className="mb-12">
-                    <h1 className="text-4xl font-bold text-primary mb-4">{t('voting.title')}</h1>
-                    <p className="text-xl text-gray-600">{t('voting.subtitle')}</p>
+                <header className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+                    <div>
+                        <h1 className="text-4xl font-bold text-primary mb-4">{t('voting.title')}</h1>
+                        <p className="text-xl text-gray-600">{t('voting.subtitle')}</p>
+                    </div>
+                    <div className="bg-primary/5 border border-primary/10 rounded-2xl p-4 flex items-center gap-4">
+                        <div className="bg-primary text-white p-2 rounded-lg">
+                            <ShieldCheck size={20} />
+                        </div>
+                        <div>
+                            <p className="text-xs font-bold text-gray-400 uppercase">Identidade Verificada</p>
+                            <p className="text-sm font-bold text-primary">{user?.email}</p>
+                        </div>
+                    </div>
                 </header>
 
                 <section className="space-y-8">

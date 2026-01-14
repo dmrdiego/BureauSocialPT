@@ -12,32 +12,44 @@ import Voting from './pages/Voting';
 import Assemblies from './pages/Assemblies';
 import Dashboard from './pages/Dashboard';
 import AdminAssociados from './pages/AdminAssociados';
+import Login from './pages/Login';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import { Navigate } from 'react-router-dom';
 import './i18n';
+
+const PrivateRoute = ({ children }) => {
+  const { isAuthenticated, loading } = useAuth();
+  if (loading) return null;
+  return isAuthenticated ? children : <Navigate to="/login" />;
+};
 
 function App() {
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/housing" element={<Housing />} />
-            <Route path="/join" element={<Join />} />
-            <Route path="/documents" element={<Documents />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/voting" element={<Voting />} />
-            <Route path="/assemblies" element={<Assemblies />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/documents" element={<Documents />} />
-            <Route path="/admin" element={<AdminAssociados />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/housing" element={<Housing />} />
+              <Route path="/join" element={<Join />} />
+              <Route path="/documents" element={<Documents />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/voting" element={<PrivateRoute><Voting /></PrivateRoute>} />
+              <Route path="/assemblies" element={<PrivateRoute><Assemblies /></PrivateRoute>} />
+              <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+              <Route path="/documents" element={<Documents />} />
+              <Route path="/admin" element={<PrivateRoute><AdminAssociados /></PrivateRoute>} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 

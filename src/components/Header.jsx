@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, User, LogOut } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 const Header = () => {
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, logout, isAuthenticated } = useAuth();
   const location = useLocation();
 
   const changeLanguage = (lng) => {
@@ -51,12 +53,31 @@ const Header = () => {
             </div>
 
             <div className="flex items-center gap-6 pl-6 border-l border-gray-100">
-              <Link
-                to="/dashboard"
-                className="bg-primary text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20"
-              >
-                Acesso Associado
-              </Link>
+              {isAuthenticated ? (
+                <div className="flex items-center gap-4">
+                  <Link
+                    to="/dashboard"
+                    className="flex items-center gap-2 text-sm font-bold text-primary bg-primary/5 px-4 py-2 rounded-xl hover:bg-primary/10 transition-all border border-primary/10"
+                  >
+                    <User size={16} />
+                    {user.firstName}
+                  </Link>
+                  <button
+                    onClick={logout}
+                    className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all"
+                    title="Sair"
+                  >
+                    <LogOut size={18} />
+                  </button>
+                </div>
+              ) : (
+                <Link
+                  to="/login"
+                  className="bg-primary text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20"
+                >
+                  Acesso Associado
+                </Link>
+              )}
 
               <div className="flex items-center gap-3">
                 <Globe size={16} className="text-gray-400" />
@@ -102,20 +123,31 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
-              <Link
-                to="/dashboard"
-                className="text-2xl font-bold uppercase tracking-widest text-primary"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Acesso Associado
-              </Link>
-              <Link
-                to="/admin"
-                className="text-2xl font-bold uppercase tracking-widest text-primary"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Admin
-              </Link>
+              {isAuthenticated ? (
+                <>
+                  <Link
+                    to="/dashboard"
+                    className="text-2xl font-bold uppercase tracking-widest text-primary"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Painel ({user.firstName})
+                  </Link>
+                  <button
+                    onClick={() => { logout(); setIsMenuOpen(false); }}
+                    className="text-2xl font-bold uppercase tracking-widest text-red-500 text-left"
+                  >
+                    Sair
+                  </button>
+                </>
+              ) : (
+                <Link
+                  to="/login"
+                  className="text-2xl font-bold uppercase tracking-widest text-primary"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Acesso Associado
+                </Link>
+              )}
             </div>
             <div className="mt-6 flex gap-4 px-4 pb-4">
               <button
