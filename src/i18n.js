@@ -11,6 +11,54 @@ const resources = {
       "menu.join": "Associe-se",
       "menu.contact": "Contato",
       "menu.voting": "Votação",
+      "menu.assemblies": "Assembleias",
+      "menu.dashboard": "Painel de Membro",
+      "menu.admin": "Administração",
+      "menu.about": "Sobre Nós",
+
+      // About Page
+      "about.title": "Sobre o Bureau Social",
+      "about.subtitle": "Inovação social e regeneração urbana",
+      "about.mission.title": "Nossa Missão",
+      "about.mission.text": "Promover o desenvolvimento sustentável e a justiça social através da economia social e da reabilitação urbana.",
+      "about.vision.title": "Nossa Visão",
+      "about.vision.text": "Ser uma referência europeia em modelos de regeneração socioambiental integrada.",
+      "about.values.title": "Nossos Valores",
+      "about.values.transparency": "Transparência",
+      "about.values.impact": "Impacto Social",
+      "about.values.innovation": "Inovação",
+
+      // Status & Terminology
+      "status.scheduled": "Agendada",
+      "status.active": "Em Curso",
+      "status.closed": "Encerrada",
+      "vote.favor": "A Favor",
+      "vote.against": "Contra",
+      "vote.abstain": "Abstenção",
+
+      // Dashboard
+      "dashboard.welcome": "Bem-vindo, {{name}}",
+      "dashboard.summary": "Resumo da sua atividade no Bureau Social.",
+      "dashboard.upcomingAssemblies": "Próximas Assembleias",
+      "dashboard.pendingVotes": "Votações Pendentes",
+      "dashboard.recentDocuments": "Documentos Recentes",
+      "dashboard.notifications": "Notificações",
+      "dashboard.viewAll": "Ver todas",
+      "dashboard.voteNow": "Votar Agora",
+      "dashboard.noAssemblies": "Nenhuma assembleia agendada",
+      "dashboard.noVotes": "Nenhuma votação pendente",
+      "dashboard.noDocuments": "Nenhum documento recente",
+
+      // Repository
+      "repository.title": "Repositório de Documentos",
+      "repository.subtitle": "Acesso a atas, regulamentos e relatórios institucionais.",
+      "repository.search": "Buscar por título ou categoria...",
+      "repository.filter.type": "Tipo de Documento",
+      "repository.filter.all": "Todos",
+      "repository.cat.statutes": "Estatutos e Regulamentos",
+      "repository.cat.reports": "Relatórios e Planos",
+      "repository.cat.minutes": "Atas de Assembleia",
+      "repository.cat.partnership": "Parcerias e Propostas",
 
       // Home
       "home.hero.title": "Instituto Português de Negócios Sociais",
@@ -177,6 +225,54 @@ const resources = {
       "menu.join": "Join Us",
       "menu.contact": "Contact",
       "menu.voting": "Voting",
+      "menu.assemblies": "Assemblies",
+      "menu.dashboard": "Member Dashboard",
+      "menu.admin": "Administration",
+      "menu.about": "About Us",
+
+      // About Page
+      "about.title": "About Bureau Social",
+      "about.subtitle": "Social innovation and urban regeneration",
+      "about.mission.title": "Our Mission",
+      "about.mission.text": "To promote sustainable development and social justice through social economy and urban rehabilitation.",
+      "about.vision.title": "Our Vision",
+      "about.vision.text": "To be a European reference in integrated social-environmental regeneration models.",
+      "about.values.title": "Our Values",
+      "about.values.transparency": "Transparency",
+      "about.values.impact": "Social Impact",
+      "about.values.innovation": "Innovation",
+
+      // Status
+      "status.scheduled": "Scheduled",
+      "status.active": "Active",
+      "status.closed": "Closed",
+      "vote.favor": "In Favor",
+      "vote.against": "Against",
+      "vote.abstain": "Abstain",
+
+      // Dashboard
+      "dashboard.welcome": "Welcome, {{name}}",
+      "dashboard.summary": "Summary of your activity at Bureau Social.",
+      "dashboard.upcomingAssemblies": "Upcoming Assemblies",
+      "dashboard.pendingVotes": "Pending Votes",
+      "dashboard.recentDocuments": "Recent Documents",
+      "dashboard.notifications": "Notifications",
+      "dashboard.viewAll": "View all",
+      "dashboard.voteNow": "Vote Now",
+      "dashboard.noAssemblies": "No assemblies scheduled",
+      "dashboard.noVotes": "No pending votes",
+      "dashboard.noDocuments": "No recent documents",
+
+      // Repository
+      "repository.title": "Document Repository",
+      "repository.subtitle": "Access to institutional minutes, regulations, and reports.",
+      "repository.search": "Search by title or category...",
+      "repository.filter.type": "Document Type",
+      "repository.filter.all": "All",
+      "repository.cat.statutes": "Statutes and Regulations",
+      "repository.cat.reports": "Reports and Plans",
+      "repository.cat.minutes": "Assembly Minutes",
+      "repository.cat.partnership": "Partnerships and Proposals",
 
       // Home
       "home.hero.title": "Portuguese Institute of Social Business",

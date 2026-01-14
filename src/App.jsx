@@ -9,6 +9,10 @@ import Documents from './pages/Documents';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Voting from './pages/Voting';
+import Assemblies from './pages/Assemblies';
+import Dashboard from './pages/Dashboard';
+import Documents from './pages/Documents';
+import AdminAssociados from './pages/AdminAssociados';
 import './i18n';
 
 function App() {
@@ -26,6 +30,10 @@ function App() {
             <Route path="/documents" element={<Documents />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/voting" element={<Voting />} />
+            <Route path="/assemblies" element={<Assemblies />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/documents" element={<Documents />} />
+            <Route path="/admin" element={<AdminAssociados />} />
           </Routes>
         </main>
         <Footer />

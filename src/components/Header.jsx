@@ -35,49 +35,51 @@ const Header = () => {
             </span>
           </Link>
 
-          {/* Desktop Menu */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {menuItems.map((item) => {
-              const isActive = location.pathname === item.path;
-              return (
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-8">
+            <div className="flex items-center gap-6">
+              {menuItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`text-sm font-medium transition-colors ${isActive
-                    ? 'text-primary font-bold'
-                    : 'text-gray-600 hover:text-primary'
+                  className={`text-sm font-bold uppercase tracking-wider transition-colors hover:text-primary ${location.pathname === item.path ? 'text-primary' : 'text-gray-500'
                     }`}
                 >
                   {item.label}
                 </Link>
-              );
-            })}
-
-            {/* Language Selector */}
-            <div className="flex items-center gap-2 border-l border-gray-200 pl-6 ml-2">
-              <Globe size={18} className="text-gray-400" />
-              <button
-                onClick={() => changeLanguage('pt')}
-                className={`text-xs font-semibold px-2 py-1 rounded transition-colors ${i18n.language === 'pt'
-                  ? 'bg-gray-100 text-gray-900'
-                  : 'text-gray-500 hover:text-gray-900'
-                  }`}
-              >
-                PT
-              </button>
-              <button
-                onClick={() => changeLanguage('en')}
-                className={`text-xs font-semibold px-2 py-1 rounded transition-colors ${i18n.language === 'en'
-                  ? 'bg-gray-100 text-gray-900'
-                  : 'text-gray-500 hover:text-gray-900'
-                  }`}
-              >
-                EN
-              </button>
+              ))}
             </div>
-          </nav>
 
-          {/* Mobile Menu Button */}
+            <div className="flex items-center gap-6 pl-6 border-l border-gray-100">
+              <Link
+                to="/dashboard"
+                className="bg-primary text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20"
+              >
+                Acesso Associado
+              </Link>
+
+              <div className="flex items-center gap-3">
+                <Globe size={16} className="text-gray-400" />
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => changeLanguage('pt')}
+                    className={`text-xs font-bold transition-colors ${i18n.language === 'pt' ? 'text-primary' : 'text-gray-400 hover:text-gray-600'
+                      }`}
+                  >
+                    PT
+                  </button>
+                  <span className="text-gray-200">|</span>
+                  <button
+                    onClick={() => changeLanguage('en')}
+                    className={`text-xs font-bold transition-colors ${i18n.language === 'en' ? 'text-primary' : 'text-gray-400 hover:text-gray-600'
+                      }`}
+                  >
+                    EN
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>{/* Mobile Menu Button */}
           <button
             className="lg:hidden p-2 text-gray-600"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -89,19 +91,32 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <nav className="lg:hidden border-t border-gray-100 py-4">
-            <ul className="flex flex-col gap-2">
+            <div className="flex flex-col gap-6">
               {menuItems.map((item) => (
-                <li key={item.path}>
-                  <Link
-                    to={item.path}
-                    className="block py-3 px-4 rounded-lg hover:bg-gray-50 text-gray-700 font-medium"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="text-2xl font-bold uppercase tracking-widest text-gray-900"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
               ))}
-            </ul>
+              <Link
+                to="/dashboard"
+                className="text-2xl font-bold uppercase tracking-widest text-primary"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Acesso Associado
+              </Link>
+              <Link
+                to="/admin"
+                className="text-2xl font-bold uppercase tracking-widest text-primary"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Admin
+              </Link>
+            </div>
             <div className="mt-6 flex gap-4 px-4 pb-4">
               <button
                 onClick={() => { changeLanguage('pt'); setIsMenuOpen(false); }}
