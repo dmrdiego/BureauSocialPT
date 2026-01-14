@@ -18,6 +18,7 @@ const Header = () => {
     { path: '/about', label: t('menu.about') },
     { path: '/projects', label: t('menu.projects') },
     { path: '/housing', label: 'Moradia' },
+    { path: '/voting', label: t('menu.voting') },
     { path: '/join', label: t('menu.join') },
     { path: '/documents', label: 'Documentos' },
     { path: '/contact', label: t('menu.contact') }
@@ -43,8 +44,8 @@ const Header = () => {
                   key={item.path}
                   to={item.path}
                   className={`text-sm font-medium transition-colors ${isActive
-                      ? 'text-primary font-bold'
-                      : 'text-gray-600 hover:text-primary'
+                    ? 'text-primary font-bold'
+                    : 'text-gray-600 hover:text-primary'
                     }`}
                 >
                   {item.label}
@@ -58,8 +59,8 @@ const Header = () => {
               <button
                 onClick={() => changeLanguage('pt')}
                 className={`text-xs font-semibold px-2 py-1 rounded transition-colors ${i18n.language === 'pt'
-                    ? 'bg-gray-100 text-gray-900'
-                    : 'text-gray-500 hover:text-gray-900'
+                  ? 'bg-gray-100 text-gray-900'
+                  : 'text-gray-500 hover:text-gray-900'
                   }`}
               >
                 PT
@@ -67,8 +68,8 @@ const Header = () => {
               <button
                 onClick={() => changeLanguage('en')}
                 className={`text-xs font-semibold px-2 py-1 rounded transition-colors ${i18n.language === 'en'
-                    ? 'bg-gray-100 text-gray-900'
-                    : 'text-gray-500 hover:text-gray-900'
+                  ? 'bg-gray-100 text-gray-900'
+                  : 'text-gray-500 hover:text-gray-900'
                   }`}
               >
                 EN

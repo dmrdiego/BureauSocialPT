@@ -8,6 +8,7 @@ import Join from './pages/Join';
 import Documents from './pages/Documents';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Voting from './pages/Voting';
 import './i18n';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path="/join" element={<Join />} />
             <Route path="/documents" element={<Documents />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/voting" element={<Voting />} />
           </Routes>
         </main>
         <Footer />

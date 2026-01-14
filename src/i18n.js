@@ -10,6 +10,7 @@ const resources = {
       "menu.projects": "Projetos",
       "menu.join": "Associe-se",
       "menu.contact": "Contato",
+      "menu.voting": "Votação",
 
       // Home
       "home.hero.title": "Instituto Português de Negócios Sociais",
@@ -104,6 +105,45 @@ const resources = {
       "technical.units": "Unidades Habitacionais",
       "technical.jobs": "Empregos Criados",
 
+      // Housing Page
+      "housing.hero.title": "Habitação Social para Artistas e Artesãos",
+      "housing.hero.subtitle": "Reabilitando o patrimônio histórico de Lisboa com impacto social",
+      "housing.description": "O Bureau Social promove o acesso à habitação digna para profissionais da cultura, integrando-os na malha urbana através da reabilitação de edifícios históricos.",
+      "housing.download": "Baixar Edital",
+      "housing.apply": "Candidatar-se",
+      "housing.professions.title": "Público-Alvo",
+      "housing.professions.construction": "Construção Tradicional",
+      "housing.professions.construction.desc": "Mestres de obras, pedreiros e especialistas em restauro.",
+      "housing.professions.arts": "Artes Visuais",
+      "housing.professions.arts.desc": "Pintores, escultores e artistas plásticos.",
+      "housing.professions.performance": "Artes Performativas",
+      "housing.professions.performance.desc": "Atores, músicos e bailarinos.",
+      "housing.professions.crafts": "Artesanato",
+      "housing.professions.crafts.desc": "Ourives, tecelões e artesãos locais.",
+      "housing.how.title": "Como Funciona",
+      "housing.how.offer.title": "O que oferecemos",
+      "housing.how.offer.desc": "Habitação a custos controlados em zonas centrais de Lisboa e espaços de trabalho partilhados.",
+      "housing.how.receive.title": "O que recebemos",
+      "housing.how.receive.desc": "A contrapartida é a participação em projetos de regeneração urbana e impacto comunitário.",
+      "housing.options.title": "Opções de Participação",
+      "housing.option.a": "Opção A: Residência permanente com custos reduzidos.",
+      "housing.option.b": "Opção B: Residência temporária para projetos específicos.",
+      "housing.option.c": "Opção C: Uso exclusivo de ateliês e oficinas.",
+
+      // Voting
+      "voting.title": "Sistema de Votação Participativa",
+      "voting.subtitle": "Participe nas decisões estratégicas do Bureau Social",
+      "voting.active.proposals": "Propostas Ativas",
+      "voting.vote.button": "Votar",
+      "voting.ends": "Termina em",
+      "voting.status.open": "Aberto",
+      "voting.status.closed": "Encerrado",
+      "voting.proposal1.title": "Aprovação do Orçamento para Quinta do Visconde (2025)",
+      "voting.proposal1.desc": "Votação para aprovação da verba destinada ao restauro do palacete principal.",
+      "voting.proposal2.title": "Novo Programa de Estágios",
+      "voting.proposal2.desc": "Criação de 10 vagas de estágio para jovens artesãos de Estarreja.",
+      "voting.thanks": "Obrigado por participar!",
+
       // Footer
       "footer.about": "Sobre o Bureau Social",
       "footer.about.desc": "O Instituto Português de Negócios Sociais – Bureau Social promove projetos de impacto socioambiental através de governança participativa e parcerias estratégicas.",
@@ -136,6 +176,7 @@ const resources = {
       "menu.projects": "Projects",
       "menu.join": "Join Us",
       "menu.contact": "Contact",
+      "menu.voting": "Voting",
 
       // Home
       "home.hero.title": "Portuguese Institute of Social Business",
