@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bureausocial.pt/sitemap.xml
