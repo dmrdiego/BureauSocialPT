@@ -6,6 +6,8 @@ import Projects from './pages/Projects';
 import Housing from './pages/Housing';
 import Join from './pages/Join';
 import Documents from './pages/Documents';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import './i18n';
 
 function App() {
